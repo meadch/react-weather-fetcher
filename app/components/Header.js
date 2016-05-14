@@ -1,7 +1,6 @@
 const React = require('react'),
       PropTypes = React.PropTypes,
       Link = require('react-router').Link,
-      styles = require('../styles'),
       WeatherForm = require('./WeatherForm')
 
 const Header = React.createClass({
