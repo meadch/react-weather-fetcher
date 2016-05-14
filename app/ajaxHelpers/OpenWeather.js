@@ -8,9 +8,6 @@ const OpenWeatherHelpers = {
     .catch( (err) => {
       console.log('There was an error', err)
     })
-  },
-  getIconByWeatherCode (code) {
-
   }
 }
 
