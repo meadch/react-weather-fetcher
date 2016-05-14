@@ -4,7 +4,11 @@ const React = require('react'),
 const WeatherPrompt = React.createClass({
   render () {
     return (
-      <WeatherForm className='text-center'/>
+      <div className="row">
+        <div className="col s6 offset-s3">
+          <WeatherForm className='text-center'/>
+        </div>
+      </div>
     )
   }
 });

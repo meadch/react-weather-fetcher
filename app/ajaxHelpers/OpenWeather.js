@@ -1,12 +1,16 @@
 const axios = require('axios'),
-      APIKEY = "80e73c32ceaf6ebc552dd310cb92431a"
+      APIKEY = require("../private.json").secret_key
+
 
 const OpenWeatherHelpers = {
   getForcastByCity (locationInfo) {
-    return axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${locationInfo}&APPID=80e73c32ceaf6ebc552dd310cb92431a`)
+    return axios.get(`http://api.openweathermap.org/data/2.5/forecast/daily?q=${locationInfo}&units=imperial&APPID=${APIKEY}`)
     .catch( (err) => {
       console.log('There was an error', err)
     })
+  },
+  getIconByWeatherCode (code) {
+
   }
 }
 

@@ -12,7 +12,14 @@ const Header = React.createClass({
     return (
       <nav>
         <div className="nav-wrapper">
-          <Link to="/" className="brand-logo">{this.props.logo}</Link>
+          <div className="row">
+            <div className="col s2 offset-s1">
+              <Link to="/" className="brand-logo">{this.props.logo}</Link>
+            </div>
+            <div className="col s6 right offset-s1">
+              <WeatherForm />
+            </div>
+        </div>
         </div>
       </nav>
     )

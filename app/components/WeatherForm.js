@@ -1,5 +1,6 @@
 const React = require('react'),
-      OpenWeather = require('../ajaxHelpers/OpenWeather')
+      OpenWeather = require('../ajaxHelpers/OpenWeather'),
+      hashHistory = require('react-router').hashHistory
 
 const WeatherForm = React.createClass({
   getInitialState (){
@@ -16,8 +17,10 @@ const WeatherForm = React.createClass({
     e.preventDefault();
     OpenWeather.getForcastByCity(this.state.location)
     .then( (response) => {
-      console.log(response)
-      // Send to another route
+      hashHistory.push({
+        pathname: '/forecast',
+        state: { forecast : response.data }
+      })
     })
     .catch( (err) => {
       console.log('There was an error', err)
@@ -25,17 +28,17 @@ const WeatherForm = React.createClass({
   },
   render () {
     return (
-      <div className="row">
-        <form className="col s12" onSubmit={this.handleFormSubmit}>
-          <div className="row">
-            <div className="input-field col s3 offset-s5">
-              <label for="weather">City, State</label>
-              <input id="weather" type="text" value={this.state.location} onChange={this.handleInputChange}/>
-              <button className="btn waves-effect waves-light">Fetch Weather</button>
+        <form onSubmit={this.handleFormSubmit}>
+            <div className="input-field col s6 offset-s1">
+              <div className='row'>
+                {/*<label for="weather">City, State</label>*/}
+                <input id="weather" type="text" defaultValue={"City, State"}  onChange={this.handleInputChange}/>
+              </div>
             </div>
-          </div>
+            <div className="input-field col s4 offset-s1">
+              <button className="btn waves-effect waves-light">Get Weather</button>
+            </div>
         </form>
-      </div>
     )
   }
 })

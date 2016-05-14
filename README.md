@@ -1,7 +1,5 @@
 ##React Weather App
-A React.js app using the Open Weather API. See Tyler McGinnis' [React.js Curriculum](https://github.com/ReactjsProgram/react-fundamentals-curriculum) page for more information.
-
-##Plan of Attack:
+A simple React.js app using the Open Weather API and Materialize CSS.
 
 ###App Blueprint:
 
@@ -11,13 +9,12 @@ A React.js app using the Open Weather API. See Tyler McGinnis' [React.js Curricu
     + WeatherForm Component
   + Prompt Component
     + WeatherForm Component
-  + WeatherWeek Component
+  + Forecast Component
     + Title information
     + WeatherSummary Component
-  + WeatherDay Component
+  + Details Component
+  + FooterComponent
 
 ####Other components/services needed:
-
 + Router (react-router)
-+ Loading
 + API calls
