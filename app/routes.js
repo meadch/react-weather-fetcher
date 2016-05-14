@@ -4,12 +4,13 @@ const React = require('react'),
       Route = ReactRouter.Route,
       IndexRoute = ReactRouter.IndexRoute
       hashHistory = ReactRouter.hashHistory,
-      MainComponent = require('./components/Main')
+      Main = require('./components/Main'),
+      WeatherPrompt = require('./components/WeatherPrompt')
 
 module.exports = (
       <Router history={hashHistory}>
-        <Route path='/' component={MainComponent}>
-          {/*<IndexRoute component={Test}/>*/}
+        <Route path='/' component={Main}>
+          <IndexRoute component={WeatherPrompt}/>
 
         </Route>
       </Router>

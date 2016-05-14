@@ -7,6 +7,7 @@ module.exports = React.createClass({
     return (
       <div className="container">
         <Header logo="Fetch Weather"/>
+        {this.props.children}
         <Footer heading="Weather Fetcher"
                 summary="Made with React.js by Charlie Mead (2016)"
                 links={[{url: '/', text: 'Home'}]}
